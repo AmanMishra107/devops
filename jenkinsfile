@@ -1,0 +1,22 @@
+pipeline{
+  agent any
+  stages{
+    stage('checkout'){
+      step{
+        git 'https://github.com/AmanMishra107/devops.git'
+      }
+    }
+    stage('Publish){
+      step{
+        publishHTML([
+          allowmissing:true
+          alwaysLinktoLastBuild:false,
+          KeepAll:false,
+          reportDir:'_',
+          reportFiles:'index.html',
+          reportName:'MY HTML PIPE PAGE'
+        ])
+      }
+    }
+  }
+}
