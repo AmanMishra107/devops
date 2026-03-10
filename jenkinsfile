@@ -6,7 +6,7 @@ pipeline{
         git 'https://github.com/AmanMishra107/devops.git'
       }
     }
-    stage('Publish){
+    stage('Publish'){
       step{
         publishHTML([
           allowmissing:true
